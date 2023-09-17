@@ -43,7 +43,7 @@ class myTheme{
         // textBaseline: TextBaseline.alphabetic,
         fontSize: 25,
         color: blackColor,
-        fontFamily: "DecoType",
+        // fontFamily: "DecoType",
       ),
       bodyMedium: TextStyle(
         height: 2,
