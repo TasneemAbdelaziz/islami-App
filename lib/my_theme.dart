@@ -99,7 +99,7 @@ class myTheme{
         // textBaseline: TextBaseline.alphabetic,
         fontSize: 25,
         color: yellowColor,
-        fontFamily: "DecoType",
+        // fontFamily: "DecoType",
       ),
       bodyMedium: TextStyle(
         height: 2,
