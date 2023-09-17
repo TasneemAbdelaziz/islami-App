@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:task5/my_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:task5/providers/app_config_provider.dart';
 
 class suraDetails extends StatefulWidget {
@@ -74,10 +73,21 @@ class _suraDetailsState extends State<suraDetails> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('سورة ${args.name}',style:Theme.of(context).textTheme.titleSmall,),
-                        SizedBox(width: 20,),
-                        ImageIcon(AssetImage("assets/images/Icon awesome-play-circle.png")),
-                      ],
+                              Text(
+                                'سورة ${args.name}',
+                                style: provider.AppTheme == ThemeMode.light
+                                    ? Theme.of(context).textTheme.titleSmall
+                                    : Theme.of(context)
+                                        .textTheme
+                                        .titleSmall!
+                                        .copyWith(color: myTheme.yellowColor),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ImageIcon(AssetImage(
+                                  "assets/images/Icon awesome-play-circle.png")),
+                            ],
                     ),
                     Divider(
                       height: 30,

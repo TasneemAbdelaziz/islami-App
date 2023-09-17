@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:task5/hedeth/hedeth.dart';
 import 'package:task5/my_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:task5/providers/app_config_provider.dart';
 
 class hedethDetils extends StatelessWidget {
@@ -47,7 +45,12 @@ class hedethDetils extends StatelessWidget {
                 children: [
                   Text(
                     args.title,
-                    style: Theme.of(context).textTheme.titleLarge,
+                    style: provider.AppTheme == ThemeMode.light
+                        ? Theme.of(context).textTheme.titleSmall
+                        : Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(color: myTheme.yellowColor),
                   ),
                   Divider(
                     height: 30,
